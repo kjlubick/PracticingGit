@@ -56,6 +56,8 @@ Bake at 325 for 40 minutes.  Refigerate for 3 hours.  Sprinkle crushed Reese's o
 2. In a large skillet, saute the asparagus, onion and mushrooms in butter until asparagus is crisp-tender. In a large bowl, combine the remaining ingredients; stir in asparagus mixture. Pour into crust.
 3. Bake at 375° for 25-30 minutes or until a knife inserted near the center comes out clean. Let stand for 10 minutes before cutting.  Serve with ketchup.
 
+[Source](http://www.tasteofhome.com/recipes/mushroom-asparagus-quiche#ixzz38gHtM8R8)
+
 #Broccoli Good Enough You'll Actually Eat it#
 **Total Time**: 25 min  **Kitchen Time**: 10 min
 
