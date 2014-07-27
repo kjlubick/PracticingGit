@@ -75,6 +75,8 @@ Bake at 325 for 40 minutes.  Refigerate for 3 hours.  Sprinkle crushed Reese's o
 - Salsa (optional)
 - Sour Cream (optional)
 
+Preheat pan to medium heat.  Put cheese between tortillas.  Cook, flipping occasionally, for 7 minutes or until both sides are golden brown and the cheese is gooey. 
+
 
 #Fancy Fish: Flounder in Disguise#
 **Total Time**: 1 hour  **Kitchen Time**: 30 min
