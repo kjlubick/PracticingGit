@@ -33,13 +33,22 @@ Bake at 325 for 40 minutes.  Refigerate for 3 hours.  Sprinkle crushed Reese's o
 **Total Time**: 1 hour  **Kitchen Time**: 30 mins
 
 ###Ingredients###
-- 6 oz Mexican cheese
-- 5 Eggs
-- 1 onion
-- 2 cups frozen spinnach
-- mushrooms (optional)
-- leeks
+**Crust:**
+- 1 tube crescent roll dough (8 oz)
+- 2 teaspoons dijon mustard
 
+**Filling:**
+- 1.5 pounds fresh asparagus, trimmed and cut into 1/2-inch pieces
+- 1 medium onion, chopped
+- 1/2 fresh mushrooms sliced
+- 1/4 cup parsley
+- 2 eggs
+- 1/4 cup minced fresh parsley
+- 1/4 teaspoon garlic powder, dried basil, oregano and sage
+
+**Misc:**
+- 1/4 cup butter, for sauteeing
+- salt and pepper to taste
 
 #Broccoli Good Enough You'll Actually Eat it#
 **Total Time**: 25 min  **Kitchen Time**: 10 min
