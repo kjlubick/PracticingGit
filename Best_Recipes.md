@@ -29,7 +29,7 @@ Bake at 325 for 40 minutes.  Refigerate for 3 hours.  Sprinkle crushed Reese's o
 - 6 big potatoes
 - assorted vegetables
 
-#Q.U.I.C.H.E#
+#Q.U.I.C.H.E - so good, it has its own acronym#
 **Total Time**: 1 hour  **Kitchen Time**: 30 mins
 
 ###Ingredients###
@@ -39,6 +39,7 @@ Bake at 325 for 40 minutes.  Refigerate for 3 hours.  Sprinkle crushed Reese's o
 - 2 cups frozen spinnach
 - mushrooms (optional)
 - leeks
+
 
 #Broccoli Good Enough You'll Actually Eat it#
 **Total Time**: 25 min  **Kitchen Time**: 10 min
