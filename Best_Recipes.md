@@ -30,18 +30,26 @@ Bake at 325 for 40 minutes.  Refigerate for 3 hours.  Sprinkle crushed Reese's o
 - assorted vegetables
 
 #Q.U.I.C.H.E - so good, it has its own acronym#
-**Total Time**: 1 hour  **Kitchen Time**: 30 mins
+**Total Time**: 1 hour  **Kitchen Time**: 20 mins
 
 ###Ingredients###
 - 6 oz Mexican cheese
 - 6 eggs
-- 1/2 onion, finely
+- 1/2 onion, finely chopped
 - 1/2 cup chopped leeks
 - 1 cup frozen spinnach
-- mushrooms (optional)
+- 1/4 cup mushrooms (optional)
 
 
 This crustless quiche is delicious!  
+
+Crack all the eggs into a large bowl and mix in the cheese.
+
+Saute the chopped onion for 2 minutes, add the chopped leaks and mushrooms and saute for another 2 minutes.
+
+Add vegetables to cheese/egg mixture and put into a greased glass pie pan.  
+
+Cook at 350 degrees for about 40 minutes.
 
 #Broccoli Good Enough You'll Actually Eat it#
 **Total Time**: 25 min  **Kitchen Time**: 10 min
