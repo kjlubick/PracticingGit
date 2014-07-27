@@ -34,12 +34,14 @@ Bake at 325 for 40 minutes.  Refigerate for 3 hours.  Sprinkle crushed Reese's o
 
 ###Ingredients###
 - 6 oz Mexican cheese
-- 5 Eggs
-- 1 onion
-- 2 cups frozen spinnach
+- 6 eggs
+- 1/2 onion, finely
+- 1/2 cup chopped leeks
+- 1 cup frozen spinnach
 - mushrooms (optional)
-- leeks
 
+
+This crustless quiche is delicious!  
 
 #Broccoli Good Enough You'll Actually Eat it#
 **Total Time**: 25 min  **Kitchen Time**: 10 min
