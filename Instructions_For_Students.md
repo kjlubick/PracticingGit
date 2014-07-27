@@ -58,6 +58,11 @@ Here we have some manual issues to resolve.  GitHub for Windows or GitHub for Ma
 git mergetool
 ```
 
-If you are using Meld, remember that the center editor is what will be the merge results, the outside editors are temporary.  Save (Ctrl+S) when you are done resolving all the conflicts, and then exit Meld.  Git will automatically detect
+If you are using Meld, remember that the center editor is what will be the merge results, the outside editors are temporary.  Save (Ctrl+S) when you are done resolving all the conflicts, and then exit Meld.  Git will automatically detect when you exit and move on.
+
+When you are done with the mergetool, you'll see something like:
+![image](https://cloud.githubusercontent.com/assets/6819944/3714391/26cb0e32-15a5-11e4-96f1-374f913f91db.png)
+
+If you are happy with the results of the merge, `git commit` will conclude the merge process.  If you want to undo the merging, `git merge --abort` will rollback to before you merged in quiche-2-merge. 
 
 For a lesson on recovering from mistakes, see [this set of excercises](/Recovering_from_mistakes.md).
