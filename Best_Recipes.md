@@ -50,6 +50,12 @@ Bake at 325 for 40 minutes.  Refigerate for 3 hours.  Sprinkle crushed Reese's o
 - 1/4 cup butter, for sauteeing
 - salt and pepper to taste
 
+**Steps:**
+
+1. Separate crescent dough into eight triangles; place in an ungreased 9-in. pie plate with points toward the center. Press onto the bottom and up the sides to form a crust; seal perforations. Spread with mustard; set aside.
+2. In a large skillet, saute the asparagus, onion and mushrooms in butter until asparagus is crisp-tender. In a large bowl, combine the remaining ingredients; stir in asparagus mixture. Pour into crust.
+3. Bake at 375° for 25-30 minutes or until a knife inserted near the center comes out clean. Let stand for 10 minutes before cutting.  Serve with ketchup.
+
 #Broccoli Good Enough You'll Actually Eat it#
 **Total Time**: 25 min  **Kitchen Time**: 10 min
 
