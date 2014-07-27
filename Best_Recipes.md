@@ -27,7 +27,21 @@ Bake at 325 for 40 minutes.  Refigerate for 3 hours.  Sprinkle crushed Reese's o
 ###Ingredients###
 - 1 lb bacon
 - 6 big potatoes
-- assorted vegetables
+- 16 oz Chicken broth
+- 1/2 cup chopped carrots
+- 1/2 cup chopped onions
+- 1/2 cup chopped celery
+- Oregano and sage to taste
+
+Make bacon.  Keep grease in pan afterwards.  Put bacon off to the side
+
+Peel potatoes and microwave them for 2 minutes until soft (do this in shifts of 2 potatoes, while you peel the next 2).  Chop into 1/8ths and put into large pot with chicken broth over medium heat.
+
+Saute vegetables in bacon grease for 5 minutes or so and pour the vegetables and grease into the pot. 
+
+After 20 minutes, pour half of the contents of the pot into a blender and blend until creamy.  Return blender contents to pot and stir.
+
+Top with cheese and chopped up bacon and serve with crackers.
 
 #Q.U.I.C.H.E - so good, it has its own acronym#
 **Total Time**: 1 hour  **Kitchen Time**: 20 mins
