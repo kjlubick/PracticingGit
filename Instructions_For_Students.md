@@ -33,6 +33,8 @@
 -use rest
 
 ###Merging###
+
+####A basic merge####
 We have two branches `quiche-1-merge` and `quiche-2-merge`.  They have some additions to our recipe collection, but the quiche recipes don't quite match.  Let's merge these two branches and resolve the conflicts.
 ```
 git checkout master
@@ -64,5 +66,54 @@ When you are done with the mergetool, you'll see something like:
 ![image](https://cloud.githubusercontent.com/assets/6819944/3714391/26cb0e32-15a5-11e4-96f1-374f913f91db.png)
 
 If you are happy with the results of the merge, `git commit` will conclude the merge process.  If you want to undo the merging, `git merge --abort` will rollback to before you merged in quiche-2-merge. 
+
+####Merging strategies####
+In some cases, we can be smart about how we merge, using *merge strategies*.
+
+For all the examples, we will assume we were the authors of quiche-merge-1 and are looking to merge in some changes posed by quiche-merge-2.
+
+```
+git checkout quiche-merge-1
+git branch merge-strats
+git checkout merge-strats
+```
+
+Now, if quiche-merge-2 were an old dev branch and we want to basically ignore all changes in that branch, we can use the *ours* strategy. 
+
+`git merge quiche-2-merge -s ours`
+
+This type of merge will *never* have a conflict, but if you look at the end of the results, **all** changes from quiche-2-merge, including the extensive soup recipe, were lost.  The *ours* strategy is typically only useful if you want to keep the history of a branch, but ignore all consequences of said branch.
+
+Let's undo the merge:
+```
+git reset --hard HEAD~1
+```
+
+A more useful merging pattern would have used the default merging strategy, but defaulted to using our version, if there was a conflict.
+
+Thankfully, there is such an option.
+```
+git merge quiche-2-merge -X ours
+```
+
+Again, there will be no conflicts.  This is because any conflicts are resolved using our changes.
+
+Notice in the results from the merge that all three recipes (quesadilla, soup and quiche) are there, with our quiche recipe overwriting the other one.
+
+The subtle difference here is the -s and the -X switch.  the -s uses the *ours* strategy, where the -X uses the *ours* option associated with the default strategy (known as the *recursive* strategy).
+
+Had we wanted to keep the other quiche recipe (i.e. from "their" branch), we simply would have done:
+
+```
+git merge quiche-2-merge -X theirs
+```
+
+Most of the time, you'll want to use the default recursive strategy with one of a few options like
+```
+git merge [branch] -X ignore-all-space   //differences in whitespace are ignored
+git merge [branch] -X patience		//can produce better diffs for merging, especially if large changes have been made
+```
+
+
 
 For a lesson on recovering from mistakes, see [this set of excercises](/Recovering_from_mistakes.md).
