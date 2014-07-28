@@ -2,7 +2,35 @@
 
 
 ###Branching Workflow###
+Get updates from coworkers
 
+`git pull` 
+
+Make a new (local, private) branch and switch to it.
+```
+git branch new_branch
+git checkout 
+
+//or, in one command
+git checkout -b new_branch
+```
+
+Stage some of your changes for a nice, neat commit 
+```
+git add file_one.txt
+git add file_two.txt
+
+//or, for a more interactive approach, to allow chunk-by-chunk seperation
+git add -p
+
+//then, commit them
+git commit -m "Succint message about what happened"
+```
+
+Save all your changes (locally)
+```
+git commit -a -m "Some message here"
+```
 
 
 
