@@ -1,9 +1,20 @@
 #Instructions for Students#
 
+The following serves as an introduction to the Feature Branch way of working with git and GitHub, along with some practice with merge conflicts and recovering from mistakes.
+
+This lesson works best if you have a friend to do it with, to fully experience resolving merge conflicts.
 
 ###Getting started with these Excercises###
-- fork/clone
+This lesson set assumes you already have a git installation.  [GitHub for Windows](https://windows.github.com/) or [GitHub for Mac](https://mac.github.com/) are good clients if you don't already have one.
 
+Fork this repository (only once, if you have a partner) and then clone it.  Either hit the convenient "Clone in Desktop" button (if you installed a client recently, this may require you to restart your browser), or 
+```
+git clone https://github.com/[username]/PracticingGit.git
+```
+Be sure to give your friend [push access](https://help.github.com/articles/adding-collaborators-to-a-personal-repository)!
+
+###My first feature, GUI-style###
+Let's get a feel for our new GUI (unless you are a strict command-line person, then skip ahead to the next section).
 ----GUI
 - make branch
 - make changes to contributor file (avoiding merge conflict) 
@@ -114,6 +125,8 @@ git merge [branch] -X ignore-all-space   //differences in whitespace are ignored
 git merge [branch] -X patience		//can produce better diffs for merging, especially if large changes have been made
 ```
 
+
+#Maybe a lesson on dealing with deleted files?#
 
 
 For a lesson on recovering from mistakes, see [this set of excercises](/Recovering_from_mistakes.md).
