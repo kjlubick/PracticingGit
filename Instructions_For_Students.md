@@ -194,8 +194,24 @@ git log 4671d~3..4671d		//Shows the three commits before the specified commit
 We'll be using these tricks throughout the rest of the lesson to save space an
 
 ###Reset/Revert###
--use revert to temporarily rollback changes for debugging
--use rest
+If you want to undo previous commits, there are two general ways to do this, a permanent* way and a temporary way.
+
+We'll start with the temporary way.  I use this when I'm working on a new feature,  realize an older feature has broken, and want to see if my last few commits are responsible.
+
+Let's try this from master:
+```
+git checkout master
+
+```
+
+
+
+
+
+
+
+
+*Okay, technically reset is not permanent.  [git reflog](http://gitready.com/intermediate/2009/02/09/reflog-your-safety-net.html) can dig you out if you really need it, but it's best to be careful and pretend that deleting commits with reset can't be undone.
 
 ###Merging, a more thorough practice###
 
