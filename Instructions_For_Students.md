@@ -17,19 +17,27 @@ Be sure to give your friend [push access](https://help.github.com/articles/addin
 Let's get a feel for our new GUI (unless you are a strict command-line person, then skip ahead to the next section).
 
 First, let's make a branch off of master.  Note the new branch will always be off of whatever branch you are currently working on.  Use your name as the branch.
-
+![gui1](https://cloud.githubusercontent.com/assets/6819944/3729155/cfc85a9a-16b7-11e4-83d4-f5a9aef6c8c6.PNG)
 Second, open up the README.md file.  User 1, replace [training aid #1] with your name.  Likewise, User 2, replace [training aid #2] with your name.  We want to avoid conflicts for now, so make sure you don't edit anything else.  Be sure to save your file.
-
+![gui2](https://cloud.githubusercontent.com/assets/6819944/3729160/e62ce8e6-16b7-11e4-9187-3e982aba9677.PNG)
 You should see the client recognize the changes.  It should even stage them for you automatically by checking the box of all the files with edits (currently only one).
+![gui3](https://cloud.githubusercontent.com/assets/6819944/3729165/f5523970-16b7-11e4-8099-54a9fd1593ca.PNG)
+Type in a commit message, optionally a commit body and then press the commit button.
+![gui4](https://cloud.githubusercontent.com/assets/6819944/3729168/ffc84d72-16b7-11e4-8d23-b78761e82c61.png)
+Our branch, by default, is a private one, and we can see that our new commit is "unsynced", that is, our coworkers haven't gotten it yet.  Click the Publish button to make it public.
+![gui5](https://cloud.githubusercontent.com/assets/6819944/3729169/07655746-16b8-11e4-86aa-bcde0a03bb79.png)
+Now that our feature branch is public, let's merge it into master.  User 1, you'll go first, so we have no problems (for now).  User 2, hang on for a moment. Click the "manage" button to pull up a branch tool.
+![gui6](https://cloud.githubusercontent.com/assets/6819944/3729170/12801aa8-16b8-11e4-8661-97b6430b1d68.PNG)
+This tool is drag and drop.  Drag our feature branch to the first slot and "master" to the second branch.  We want to put our features *into* master, so we do it in this order.
+![gui7](https://cloud.githubusercontent.com/assets/6819944/3729174/1be6d5b4-16b8-11e4-9da7-6c11da5d2ae4.png)
+Then, hit merge.  This should happen automatically.  You can delete your feature branch, if you want.
 
-Type in a commit message, optionally a commit body and then commit
+Switch back to the master branch and you'll see your commit there, as well as the fact that you'll need to sync.  Hit the sync button.
+![gui8](https://cloud.githubusercontent.com/assets/6819944/3729188/6b665b8c-16b8-11e4-8e8c-179be4fc4c46.PNG)
 
-----GUI
-- make branch
-- make changes to contributor file (avoiding merge conflict) 
-- stage
-- commit 
-- sync
+User 2, thank you for your patience.  Go ahead and hit your sync button to pull in User 1's change.  Then, repeat the same steps to merge it in.
+
+And that's it, you have just made your first feature branch, your first feature and merged it in.  Pretty slick, right?
 
 ----Command line
 - make branch
