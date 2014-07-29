@@ -95,7 +95,7 @@ If you suspect there will be conflicts pushing or pulling, I recommend switching
 ###Staging###
 Now for some practice staging.  Run the following setup.  
 ```
-git checkout for_staging_practice
+git checkout origin/for_staging_practice -t
 git branch staging_copy				//make a copy of this branch
 git checkout staging_copy
 
@@ -234,6 +234,9 @@ One final caution about reset.  **NEVER** delete commits that have been pushed t
 ####A basic merge####
 We have two branches `quiche-1-merge` and `quiche-2-merge`.  They have some additions to our recipe collection, but the quiche recipes don't quite match.  Let's merge these two branches and resolve the conflicts.
 ```
+git checkout origin/quiche-1-merge -t
+git checkout origin/quiche-2-merge -t 		//get these branches if they don't already exist
+
 git checkout master
 git branch integrating-quiche
 git checkout integrating-quiche
@@ -323,6 +326,10 @@ I wasn't planning to do an entire lesson on the patient merge option, but then a
 
 We'll be merging patience-merge-2 into patience-merge-1.  As before, let's make a special merge branch, just in case things go wrong (and they might).
 ```
+git checkout origin/patience-merge-1 -t
+git checkout origin/patience-merge-2 -t 		//get these branches if they don't already exist
+
+
 git checkout patience-merge-1
 git checkout -b patience-merge  //shorthand for making a new branch and switching to it
 ```

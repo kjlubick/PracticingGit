@@ -8,7 +8,7 @@
 ####Make a new (local, private) branch and switch to it.####
 ```
 git branch new_branch
-git checkout 
+git checkout new_branch
 
 //or, in one command
 git checkout -b new_branch
@@ -18,6 +18,17 @@ git checkout -b new_branch
 ```
 git status
 ```
+
+####See availible branches####
+```
+git branch 			//shows local branches
+git branch -r 		//show branches in main repo
+```
+
+####Check out branch from main repo####
+````
+git checkout remote/branch_name -t 		//makes something called a tracking branch, which is used to sync between your repo and the main one
+````
 
 ####Stage some of your changes for a nice, neat commit ####
 ```
