@@ -142,8 +142,41 @@ git merge [branch] -X ignore-all-space   //differences in whitespace are ignored
 git merge [branch] -X patience		//can produce better diffs for merging, especially if large changes have been made
 ```
 
+####Patient Merging - a savior for large diffs####
+I wasn't planning to do an entire lesson on the patient merge option, but then a real-life example happened as I was putting these lessons together.
 
-#Maybe a lesson on dealing with deleted files?#
+We'll be merging patience-merge-2 into patience-merge-1.  As before, let's make a special merge branch, just in case things go wrong (and they might).
+```
+git checkout patience-merge-1
+git checkout -b patience-merge  //shorthand for making a new branch and switching to it
+```
 
+Merge in patience-merge-2, and then pull up mergetool
+```
+git merge patience-merge-2
+git mergetool
+```
+
+![patience_bad](https://cloud.githubusercontent.com/assets/6819944/3729379/cc37ae9e-16bc-11e4-9eb4-f6c983f32cc1.PNG)
+Ouch!  That diff is terrible!  Git seems to have gotten confused on exactly what changed and what didn't.  Lines 9-17 seem identical in both the left and the right versions, but that's not what the diff says.
+
+To be clear, this isn't a problem with Meld, but with the algorithm git used to compare the two branches.  Meld simply displays what git outputs.
+
+Quit Meld and when git asks if the merge was successful, say no.  Then, abort the merge with:
+```
+git merge --abort
+```
+
+Now, we'll tell git to be a bit more careful merging this time.
+```
+git merge patience-merge-2 -X patience
+git mergetool
+```
+
+![patience_good](https://cloud.githubusercontent.com/assets/6819944/3729384/d8e00e8e-16bc-11e4-9084-c46a08cb864c.PNG)
+
+There, that's a much clearer diff, showing us exactly what we need to know.  The version on the left is obviously more fleshed out, so we can take those changes.
+
+Wrap up the merge by committing.
 
 For a lesson on recovering from mistakes, see [this set of excercises](/Recovering_from_mistakes.md).
