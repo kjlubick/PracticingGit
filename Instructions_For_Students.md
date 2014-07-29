@@ -49,8 +49,73 @@ And that's it, you have just made your first feature branch, your first feature 
 
 
 ###Staging###
-(have them checkout a branch, git reset --soft HEAD~1)
+Now for some practice staging.  Run the following setup.  
+```
+git checkout for_staging_practice
+git branch staging_copy				//make a copy of this branch
+git checkout staging_copy
 
+git reset HEAD~1 			//this will DESTROY the previous commit (named "Commit Blob")
+							//you would NEVER want to do this to a pushed commit
+```
+The last command basically undid the last commit, leaving us with a bunch of edits that we will pretend you just did.  To do the edits, you can use one of a few commands
+
+```
+git diff HEAD
+//or
+git status -v
+//or, assuming you have it set up
+git difftool HEAD
+```
+As you can see, 3 or 4 different things have happened, which means if we were to commit all the changes, it would be a bit messy.
+
+First, let's stage the addition of Nutritional_Information.md and Top_tier_supply_list in to two separate commits, as they are distinct and deserve their own thought.
+```
+git add Nutritional_Information.md 			//tab completion is your friend
+git status
+``` 
+Your terminal should look something like:
+![image](https://cloud.githubusercontent.com/assets/6819944/3737341/1c08c678-1736-11e4-88c2-c88c4cf13fc4.png)
+Note the staged change (Nutritional_Information.md), the not staged (Best_Recipes.md), and the untracked (Top_tier_supply_list.md).  These the three typical states an edit can be in.
+
+```
+git commit -m "Adding Nutrition stub"
+
+git add Top_tier_supply_list.md
+git commit -m "A supply list would be good"
+```
+
+Now we are left with the changes to the recipe, which fall into one of two categories: Adding serving size and Adding recipe variations (There may be more, what do you think?).  For practice, let's use the interactive staging command.  If you make a mistake while staging, `git reset` will unstage everything.
+
+```
+git add -p
+```
+![image](https://cloud.githubusercontent.com/assets/6819944/3737471/3957db6e-1737-11e4-8a33-b0e04f5e9118.png)
+This shows us a *hunk* of edits and gives us half the alphabet to type to respond.  What does each mean?
+
+* y - stage this hunk
+* n - do not stage this hunk
+* q - quit; do not stage this hunk or any of the remaining ones
+* a - stage this hunk and all later hunks in the file
+* d - do not stage this hunk or any of the later hunks in the file
+* g - select a hunk to go to
+* / - search for a hunk matching the given regex
+* j - leave this hunk undecided, see next undecided hunk
+* J - leave this hunk undecided, see next hunk
+* k - leave this hunk undecided, see previous undecided hunk
+* K - leave this hunk undecided, see previous hunk
+* s - split the current hunk into smaller hunks
+* e - manually edit the current hunk
+* ? - print help
+
+If you forget, type **?** and git will print the list.  Usually, you'll stick with **y**, **n**, or **q**.
+
+When you are done with staging the first set, commit, using a descriptive message and then invoke `git add -p` to do another interactive staging process, or `git add .` to stage all changes.
+
+For super efficency, you can stage everything and commit in one command:
+```
+git commit -am "Message"   		// the -a flag says "All changes", and -m specifies the message, so we merge them -am
+```
 
 ###Log###
 -introduce ranges here
