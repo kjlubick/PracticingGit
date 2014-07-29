@@ -9,7 +9,8 @@ If you are a student [click here](https://github.com/kjlubick/PracticingGit/blob
 
 
 Contributors:
-Kevin Lubick
-[Fork the repository, make a pull request and see your name here!]
-[training aid #1]
-[training aid #2]
+
+* Kevin Lubick
+* [Fork the repository, make a pull request and see your name here!]
+* [training aid #1]
+* [training aid #2]
