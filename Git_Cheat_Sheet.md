@@ -19,7 +19,7 @@ git checkout -b new_branch
 git status
 ```
 
-####See availible branches####
+####See available branches####
 ```
 git branch 			//shows local branches
 git branch -r 		//show branches in main repo
