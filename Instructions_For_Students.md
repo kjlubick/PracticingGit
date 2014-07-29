@@ -39,14 +39,58 @@ User 2, thank you for your patience.  Go ahead and hit your sync button to pull 
 
 And that's it, you have just made your first feature branch, your first feature and merged it in.  Pretty slick, right?
 
-----Command line
-- make branch
-- make changes (add favorite recipe to bottom of recipes, making conflict)
-- stage
-- commit
-- push
-- resolve conflicts
+###Now for the command line###
+For this excercise, we'll do a similar style of changes, but this time, we'll deal merge conflicts.  And, we'll try it from the command line.
 
+
+Let's make a branch off of master.
+```
+git checkout master
+git branch fav_recipe		
+git checkout fav_recipe
+```
+
+Go ahead and, to the absolute bottom of the Best_Recipes.md and add the name of your favorite food.  Also, let's update the first line to say "the best six recipes" instead of "the best five recipes".  When you are done, save, and execute `git status` to verify git detected your changes.
+
+We'll stage the changes and commit, like so:
+```
+git add Best_Recipes.md
+git commit -m "Blueberry souffles are the best food ever"   //or a different message of your choosing
+```
+
+This time, instead of making our feature branch public, let's merge it in to master and then push it.  This is a typical workflow if the feature is completed.
+
+```
+git checkout master		//we switch to the "base branch" we want the feature to join
+git merge fav_recipe
+git push
+```
+
+Who ever is the second person to push (in your group) will introduce a merge conflict.  You'll probably see a message like "Updates were rejected because the tip of your current branch is behind." 
+
+To resolve this, we need to get the pushed changes and merge them in:
+```
+git pull			//gives message like "Conflict (content): Merge conflict in Best_Recipes.md"
+
+git mergetool		//opens up graphical merge tool (like Meld) to handle the conflicts
+```
+
+When you are done resolving the conflicts (i.e. listing both recipes and changing "the best six recipes" to "the best seven recipes"), save the file in Meld, exit meld and then end the merge with `git commit`
+
+Now, you can push your resolution:
+```
+git push
+```
+
+
+The GitHub tool doesn't handle merge conflicts well, which is why I avoided it in the first demo.  If you see something like:
+![image](https://cloud.githubusercontent.com/assets/6819944/3738388/4d878d56-1740-11e4-87a7-4fcabbab92bb.png)
+
+and you try to sync, you'll probably see:
+
+![image](https://cloud.githubusercontent.com/assets/6819944/3738400/67656d10-1740-11e4-8f68-e6558fad568a.png)
+
+If you suspect there will be conflicts pushing or pulling, I recommend switching to the command line.
 
 ###Staging###
 Now for some practice staging.  Run the following setup.  
@@ -118,14 +162,42 @@ git commit -am "Message"   		// the -a flag says "All changes", and -m specifies
 ```
 
 ###Log###
--introduce ranges here
--quitting out of less
+The gui has a nice way to view the recent history.  To get something like that, we use the log command:
+```
+git log
+```
+
+Wow, that's an extensive log.  By default, git uses the **less** tool to show the long change history, which means you can page up or page down by pressing **b** or **space** respectively.  Most important of the numerous commands less offers (e.g. searching), is to exit, which you do by typing *q*.
+
+Normally, we don't want to see the entire history, so to show the last five commits:
+```
+git log HEAD~5..HEAD
+```
+This looks a little strange, but what what's going on is what I call "relative commits" (officially called "Extended revisions").  Normally, you have to specify the sha hash of a commit so git knows which one you mean.  Normally, these are pretty long `fd0c1f30927ea926ae27d7e1c0c6d52db95795c1` and it would be a pain to type them out in full.
+
+Fortunately, there are shortcuts.  `HEAD` always refers to the previous commit, i.e. the one you are working off of right now.  The relative part of "relative commits" comes into play with `HEAD~1`, which is the parent of `HEAD`, which is usually two commits ago.  In the example, `HEAD~5` refers to five commits before `HEAD`.
+
+The two dots (yes, two dots, despite a standard [ellipsis](http://en.wikipedia.org/wiki/Ellipsis) having three dots) specify a range, from `HEAD~5` to `HEAD`, which is a lot easier than listing `HEAD, HEAD~1, HEAD~2...`.  Why are 5 commits shown instead of 6 (which should be the case if you count carefully)?  It's just how `git log` works, returning commits between those two points.
+
+Now, `HEAD` is useful and all, but what if you are referring to commits in a different branch?  Never fear, we can do relative positioning on sha hashes as well.
+```
+//don't actually type this.  See below:
+git log 4671d25c04bccbf2f1a4257b8560b3181baffaa5~3..4671d25c04bccbf2f1a4257b8560b3181baffaa5		//Shows the three commits before the specified commit
+```
+
+Hashes are really long.  Thankfully, you only need to type as much of the hash as you need to be unique.  This is typically between 5 and 7 chars depending on the size of the repo.  Git will mumble something about "ambiguous arguments"  if you need more. 
+
+```
+git log 4671d~3..4671d		//Shows the three commits before the specified commit
+```
+
+We'll be using these tricks throughout the rest of the lesson to save space an
 
 ###Reset/Revert###
 -use revert to temporarily rollback changes for debugging
 -use rest
 
-###Merging###
+###Merging, a more thorough practice###
 
 ####A basic merge####
 We have two branches `quiche-1-merge` and `quiche-2-merge`.  They have some additions to our recipe collection, but the quiche recipes don't quite match.  Let's merge these two branches and resolve the conflicts.
@@ -160,6 +232,13 @@ When you are done with the mergetool, you'll see something like:
 
 If you are happy with the results of the merge, `git commit` will conclude the merge process.  If you want to undo the merging, `git merge --abort` will rollback to before you merged in quiche-2-merge. 
 
+Finally, let's merge the temporary branch `integrating-quiche` back into master, which should be an easy fast-forward merge.
+```
+git checkout master
+git merge integrating-quiche
+git branch -d integrating-quiche   //delete temporary branch
+```
+
 ####Merging strategies####
 In some cases, we can be smart about how we merge, using *merge strategies*.
 
@@ -167,7 +246,7 @@ For all the examples, we will assume we were the authors of quiche-merge-1 and a
 
 ```
 git checkout quiche-merge-1
-git branch merge-strats
+git branch merge-strats			//this will be the temporary merge branch
 git checkout merge-strats
 ```
 
