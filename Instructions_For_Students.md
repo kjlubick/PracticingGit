@@ -177,6 +177,15 @@ git mergetool
 
 There, that's a much clearer diff, showing us exactly what we need to know.  The version on the left is obviously more fleshed out, so we can take those changes.
 
-Wrap up the merge by committing.
+Wrap up the merge by committing.  We're not quite done yet, as we have to merge our temporary merge branch into the "main" branch, which was patience-merge-1.
+```
+git checkout patience-merge-1
+git merge patient-merge		//this merge should be automatic
+
+git branch -d patient-merge //delete temp branch
+```
+
+
+
 
 For a lesson on recovering from mistakes, see [this set of excercises](/Recovering_from_mistakes.md).

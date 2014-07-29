@@ -80,6 +80,34 @@ To undo:
 
 **Common use cases:** You need to do something on a different branch, but can't automatically switch branches because of conflicts.
 
+##Merging##
+To begin a merge, checkout the base branch (like master), and then make a temporary merge branch.
+```
+git checkout master	        //we want to use master as our base
+git checkout -b temp_merge
+
+git merge branch_to_merge
+```
+If the merge succeeds automatically, you are done.  Otherwise, you'll need to fix the conflicts (perhaps, using a merge tool) and then commit, like:
+
+```
+git mergetool
+//fix conflicts
+
+git commit 			//no need to supply a message, git will generate one for you
+```
+
+####Merge strategies and strategy options####
+Sometimes you'll want to use the default recursive strategy with one of a few options like
+```
+git merge [branch_to_merge] -X ours 				//If there are conflicts, resolve them with base's version (e.g. master)
+git merge [branch_to_merge] -X theirs			 	//If there are conflicts, resolve them with branch_to_merge's version
+git merge [branch_to_merge] -X ignore-all-space   	//differences in whitespace are ignored
+git merge [branch_to_merge] -X patience				//can produce better diffs for merging, especially if large changes have been made
+
+
+git merge [branch_to_merge] -s ours 				//Ignore all changes in branch_to_merge, but mark the branch as merged in.  Not commonly used.
+```
 
 
 ##Dealing with Forks##
