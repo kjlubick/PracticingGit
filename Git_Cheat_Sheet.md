@@ -56,6 +56,15 @@ git push -u origin branch_name
 
 **Note:** things like `git reset` will **not** affect this file until `git update-index --no-skip-worktree my_config_file.cfg` is executed.  Other operations, like `git pull` will function as normally.
 
+####Revert last commit (temporarily)####
+`git revert HEAD`
+
+This creates a commit that undoes the changes you last made (additions become deletions and vice-versa).  You can specify a range, or arbitrary
+
+**Common use cases:** You want to split up the last commit into multiple or forgot to add files
+
+
+
 ####Undo last commit, preserve changes####
 `git reset --soft HEAD~1`
 
