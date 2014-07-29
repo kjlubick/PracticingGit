@@ -13,4 +13,4 @@ Contributors:
 * Kevin Lubick
 * [Fork the repository, make a pull request and see your name here!]
 * [training aid #1]
-* [training aid #2]
+* Sean Streck (added today) 
