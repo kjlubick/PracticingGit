@@ -1,8 +1,6 @@
-#Recovering from Mistakes#
+#Recovering from Mistakes# 
 
 We all make goofs from time to time, but version control was designed to help us out when we goofed by remembering the history and giving us access to it.
-
-###Well, those changes didn't work (Resetting to previous commits)###
 
 ###I started working in the wrong branch!###
 #####The setup#####

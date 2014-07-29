@@ -193,27 +193,43 @@ git log 4671d~3..4671d		//Shows the three commits before the specified commit
 
 We'll be using these tricks throughout the rest of the lesson to save space an
 
-###Reset/Revert###
+###Reset/Revert, tools for going back in time###
 If you want to undo previous commits, there are two general ways to do this, a permanent* way and a temporary way.
 
 We'll start with the temporary way.  I use this when I'm working on a new feature,  realize an older feature has broken, and want to see if my last few commits are responsible.
 
-Let's try this from master:
+Let's try this from master, to revert the last 3 changes:
 ```
 git checkout master
-
+git revert HEAD~3..HEAD  //the first in the range is ignored, so this is only the last 3 commits
 ```
 
+Git will make 3 new commits that are exact opposites of the last three commits - removing text you added and replacing deleted text.
 
+You don't need to reset in order.  If you feel that the 2nd to last commit was really the culprit, you can just revert that with:
+```
+git revert HEAD~1 
+```
 
+Now, let's pretend the old feature was broken before I started work (i.e. my changes didn't break them) and I want to delete the revert commits and go back to what I was working on.  `git reset` has the power to delete commits, along with a few other things.
 
+To delete the 3 reverts we introduced:
+```
+git reset --hard HEAD~3 //this puts the 4th to last commit as the new head
+```
 
+The most common use case I have for reset is actually to abandon all my changes I've made since the last commit.
 
+Go ahead and edit some file, any file, pehaps deleting most of it.  Then, to undo that:
+```
+git reset --hard HEAD  //return to the last commit
+```
 
+One final caution about reset.  **NEVER** delete commits that have been pushed to the central repository, as this will screw up your coworker's history and make reincorporating changes difficult.
 
-*Okay, technically reset is not permanent.  [git reflog](http://gitready.com/intermediate/2009/02/09/reflog-your-safety-net.html) can dig you out if you really need it, but it's best to be careful and pretend that deleting commits with reset can't be undone.
+*Okay, technically reset is not permanent.  [git reflog](http://gitready.com/intermediate/2009/02/09/reflog-your-safety-net.html) can dig you out of trouble if you really need it, but it's best to be careful and pretend that deleting commits with reset can't be undone.
 
-###Merging, a more thorough practice###
+###Merging, a more thorough practice### 
 
 ####A basic merge####
 We have two branches `quiche-1-merge` and `quiche-2-merge`.  They have some additions to our recipe collection, but the quiche recipes don't quite match.  Let's merge these two branches and resolve the conflicts.
